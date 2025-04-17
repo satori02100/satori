@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Trang Mẫu - Chủ đề Galaxy</title>
+<style>
+/* General Styles */
+:root {
+    /* Galaxy Color Palette */
+    --galaxy-dark-bg: #0f172a;       /* Deep Space Blue/Black */
+    --galaxy-container-bg: #1e293b; /* Slightly Lighter Dark Blue/Slate */
+    --galaxy-purple: #8b5cf6;       /* Vibrant Purple */
+    --galaxy-pink: #ec4899;         /* Vibrant Pink */
+    --galaxy-cyan: #22d3ee;         /* Vibrant Cyan */
+    --galaxy-deep-blue: #3b82f6;    /* A brighter deep blue */
+    --galaxy-light-text: #e2e8f0;   /* Light Gray/Off-white */
+    --galaxy-medium-text: #94a3b8; /* Medium Gray/Slate */
+    --galaxy-border: #334155;       /* Dark Slate Border */
+    --galaxy-shadow: rgba(139, 92, 246, 0.25); /* Purple-tinted Shadow */
+    --galaxy-shadow-hover: rgba(139, 92, 246, 0.35);
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    background-color: var(--galaxy-dark-bg); /* Dark base background */
+    color: var(--galaxy-medium-text);       /* Default medium light text */
+    line-height: 1.7;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: var(--galaxy-container-bg); /* Dark container */
+    box-shadow: 0 10px 50px var(--galaxy-shadow); /* Purple shadow */
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid var(--galaxy-border); /* Subtle border */
+}
+
+.container:hover {
+    box-shadow: 0 15px 65px var(--galaxy-shadow-hover); /* Enhanced hover shadow */
+    transform: translateY(-3px);
+}
+
+/* Header Styles */
+.header {
+    /* Multi-color Galaxy Gradient */
+    background: linear-gradient(135deg, var(--galaxy-deep-blue), var(--galaxy-purple), var(--galaxy-pink), var(--galaxy-cyan));
+    background-size: 400% 400%; /* For animation */
+    animation: galaxyGradient 15s ease infinite; /* Gradient animation */
+    color: #fff; /* White text */
+    padding: 60px 40px; /* More padding */
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
+}
+
+/* Gradient Animation */
+@keyframes galaxyGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 25px;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin-right: 20px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent bg */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    flex-shrink: 0;
+    border: 2px solid var(--galaxy-cyan); /* Cyan border */
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+    display: block;
+    opacity: 0.9; /* Slight transparency */
+}
+
+.logo:hover img {
+    transform: scale(1.15) rotate(5deg); /* More dynamic hover */
+    opacity: 1;
+}
+
+.logo-container span {
+    font-size: 1.4em; /* Larger */
+    font-weight: 700;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation */
+.navigation {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.navigation a {
+    color: #fff; /* White text */
+    text-decoration: none;
+    font-size: 0.95em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.navigation a:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* Almost solid white */
+    color: var(--galaxy-purple); /* Purple text */
+    transform: translateY(-2px) scale(1.05); /* Lift and scale */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2); /* White glow */
+    border-color: var(--galaxy-purple);
+}
+
+.navigation a.active {
+    background-color: #fff; /* Solid white */
+    color: var(--galaxy-purple); /* Purple text */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    border-color: #fff;
+}
+
+h1 {
+    font-size: 3em; /* Even larger H1 */
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4); /* Stronger text shadow */
+    font-weight: 700;
+    color: #fff;
+}
+
+.header p {
+    font-size: 1.4em; /* Larger */
+    opacity: 0.9;
+    margin-top: 5px;
+    color: var(--galaxy-light-text); /* Use light text variable */
+}
+
+/* Content Styles */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    justify-content: space-between;
+}
+
+.column {
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: var(--galaxy-container-bg); /* Match container bg */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3); /* Darker shadow for depth */
+    text-align: left;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-sizing: border-box;
+    border: 1px solid var(--galaxy-border); /* Dark border */
+}
+
+@media (min-width: 768px) {
+    .column {
+        width: calc(50% - 20px);
+        margin-bottom: 0;
+    }
+}
+
+.column:hover {
+    transform: translateY(-6px); /* More lift */
+    box-shadow: 0 10px 40px var(--galaxy-shadow); /* Purple glow on hover */
+    border-color: var(--galaxy-cyan); /* Cyan border on hover */
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    border: 2px solid var(--galaxy-border); /* Dark border */
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-out, filter 0.5s ease;
+    filter: saturate(1.1); /* Slightly enhance color */
+}
+
+.image-placeholder:hover img {
+    transform: scale(1.1);
+    filter: saturate(1.3) brightness(1.1); /* Enhance more on hover */
+}
+
+.title {
+    font-weight: 700;
+    /* Gradient text (experimental, works in WebKit) */
+    background: linear-gradient(90deg, var(--galaxy-cyan), var(--galaxy-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: var(--galaxy-cyan); /* Fallback color */
+
+    border-bottom: 2px solid var(--galaxy-purple); /* Purple border */
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px; /* Wider spacing */
+    font-size: 1.3em;
+}
+
+.article {
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--galaxy-light-text); /* Lighter text for articles */
+    margin-bottom: 1.2em;
+}
+
+.article:last-of-type {
+    margin-bottom: 0;
+}
+
+.article strong {
+    font-weight: 700;
+    color: var(--galaxy-cyan); /* Cyan for emphasis */
+}
+
+/* --- Additional Links Section --- */
+.additional-links-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    padding: 30px 0;
+    border-top: 1px solid var(--galaxy-border);
+}
+
+.additional-link-item {
+    margin-bottom: 20px;
+}
+
+.additional-link-item:last-child {
+    margin-bottom: 0;
+}
+
+.additional-link-item a {
+    color: var(--galaxy-pink); /* Pink text */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 25px;
+    border: 1px solid var(--galaxy-pink); /* Pink border */
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    background-color: transparent;
+    text-transform: uppercase; /* Uppercase for buttons */
+    letter-spacing: 1px;
+}
+
+.additional-link-item a:hover {
+    color: #fff;
+    background-color: var(--galaxy-pink); /* Pink fill on hover */
+    text-decoration: none;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 5px 20px rgba(236, 72, 153, 0.4); /* Pink glow */
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 35px;
+    background-color: var(--galaxy-dark-bg); /* Dark footer */
+    border-top: 1px solid var(--galaxy-border);
+    font-size: 0.95em;
+    color: var(--galaxy-medium-text); /* Medium light text */
+    margin-top: 0;
+}
+
+/* About Section / Contact Section */
+.about-section, .contact-section {
+    padding: 40px;
+    background-color: var(--galaxy-container-bg); /* Dark background */
+    border-radius: 12px;
+    margin: 30px 40px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3); /* Consistent shadow */
+    display: none; /* Initially hidden */
+    border: 1px solid var(--galaxy-border);
+    color: var(--galaxy-light-text); /* Light text within sections */
+}
+
+.about-section h2, .contact-section h2 {
+    font-size: 2.2em; /* Larger titles */
+    /* Gradient text like column titles */
+    background: linear-gradient(90deg, var(--galaxy-cyan), var(--galaxy-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: var(--galaxy-cyan); /* Fallback */
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--galaxy-purple);
+    padding-bottom: 15px;
+    font-weight: 700;
+    text-align: center; /* Center section titles */
+}
+
+.about-section p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    text-align: center; /* Center align paragraph text */
+}
+
+.contact-section {
+    /* Specific styles if needed */
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align links */
+    gap: 18px; /* Increased gap */
+}
+
+.contact-links a {
+    display: inline-block;
+    padding: 15px 30px; /* More padding */
+    background-color: var(--galaxy-dark-bg); /* Dark button background */
+    color: var(--galaxy-cyan); /* Cyan text */
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    border: 1px solid var(--galaxy-cyan); /* Cyan border */
+    min-width: 200px; /* Minimum width */
+    text-align: center;
+}
+
+.contact-links a:hover {
+    background-color: var(--galaxy-cyan);
+    color: var(--galaxy-dark-bg); /* Dark text on hover */
+    transform: scale(1.05); /* Scale up */
+    box-shadow: 0 5px 20px rgba(34, 211, 238, 0.4); /* Cyan glow */
+    border-color: var(--galaxy-cyan);
+}
+
+/* Active Styles for Sections */
+.active-section {
+    display: block;
+}
+
+/* Friend Links Styling */
+.external-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 30px 40px;
+    background-color: var(--galaxy-dark-bg); /* Dark background */
+    margin: 30px 40px;
+    border-radius: 12px;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.4); /* Stronger inset shadow */
+    display: none;
+    border: 1px solid var(--galaxy-border);
+}
+
+.link-card {
+    background-color: var(--galaxy-container-bg); /* Dark card background */
+    padding: 25px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); /* Dark shadow */
+    margin: 15px;
+    text-align: center;
+    width: calc(50% - 50px);
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--galaxy-purple); /* Purple border */
+    color: var(--galaxy-light-text); /* Light text */
+}
+
+.link-card:hover {
+    transform: translateY(-5px) rotate(-1deg); /* Tilt on hover */
+    box-shadow: 0 8px 30px var(--galaxy-shadow); /* Purple glow */
+    border-color: var(--galaxy-pink); /* Pink border on hover */
+}
+
+.link-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: var(--galaxy-light-text); /* Light title */
+    font-weight: 600;
+}
+
+.link-card a {
+    color: var(--galaxy-cyan); /* Cyan link color */
+    text-decoration: none;
+    font-size: 0.9em;
+    word-break: break-all;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.link-card a:hover {
+    color: var(--galaxy-pink); /* Pink on hover */
+    text-decoration: underline;
+}
+
+/* Responsive Design Adjustments (Keep general structure) */
+@media (max-width: 992px) {
+    .link-card { width: calc(50% - 40px); }
+    .container { width: 90%; }
+}
+
+@media (max-width: 768px) {
+    .content { padding: 20px; }
+    .column { width: 100%; padding: 20px; margin-bottom: 25px; }
+    .header { padding: 40px 20px; }
+    h1 { font-size: 2.4em; }
+    .header p { font-size: 1.2em; }
+    .logo-container { justify-content: center; }
+    .logo-container span { display: none; }
+
+    .navigation { position: static; margin-top: 25px; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .navigation a { padding: 8px 12px; font-size: 0.9em; }
+
+    .additional-links-container { margin-top: 25px; padding: 20px 0; }
+    .additional-link-item a { padding: 10px 20px; }
+
+    .external-links { margin: 20px; padding: 20px; }
+    .link-card { width: calc(100% - 30px); margin: 10px 0; }
+
+    .about-section, .contact-section { margin: 20px; padding: 25px; }
+    .about-section h2, .contact-section h2 { font-size: 1.8em; }
+}
+
+</style>
+<!-- Rest of the head content (fonts, script) remains the same -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<script>
+function showSection(sectionId) {
+  // Target the sections container and the specific sections
+  const contentSection = document.querySelector('.content');
+  const aboutSection = document.getElementById('about');
+  const contactSection = document.getElementById('contact');
+  const externalLinks = document.querySelector('.external-links'); // Target friend links
+
+  // Hide all sections first
+  contentSection.style.display = 'none';
+  aboutSection.style.display = 'none'; // Use direct style manipulation
+  aboutSection.classList.remove('active-section'); // Also manage class if used elsewhere
+  contactSection.style.display = 'none';
+  contactSection.classList.remove('active-section');
+  externalLinks.style.display = 'none'; // Hide friend links
+
+  // Deactivate all navigation links
+  document.querySelectorAll('.navigation a').forEach(link => {
+    link.classList.remove('active');
+  });
+
+  // Show the selected section and activate the corresponding link
+  const activeLink = document.querySelector(`.navigation a[href="#${sectionId}"]`);
+  if (activeLink) {
+    activeLink.classList.add('active');
+  }
+
+  if (sectionId === 'home') {
+    contentSection.style.display = 'flex'; // Show main content (columns + new links)
+    externalLinks.style.display = 'flex'; // Show friend links on home page
+  } else if (sectionId === 'about') {
+    aboutSection.style.display = 'block';
+    aboutSection.classList.add('active-section'); // Add class if needed for CSS targeting
+  } else if (sectionId === 'contact') {
+    contactSection.style.display = 'block';
+    contactSection.classList.add('active-section');
+  }
+}
+
+// Ensure the home section is shown by default on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.substring(1);
+    let activeNavFound = false;
+    document.querySelectorAll('.navigation a').forEach(link => {
+        if (link.getAttribute('href') === `#${hash}`) {
+            link.classList.add('active');
+            activeNavFound = true;
+        } else {
+            link.classList.remove('active');
+        }
+    });
+    if (!activeNavFound && document.querySelector('.navigation a[href="#home"]')) {
+         document.querySelector('.navigation a[href="#home"]').classList.add('active');
+    }
+
+    if (hash === 'about' || hash === 'contact') {
+        showSection(hash);
+    } else {
+        showSection('home');
+    }
+});
+</script>
+</head>
+<body> <!-- Body content remains the same -->
+
+<div class="container">
+    <div class="header">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOW96eTQ3cm5pbXlzNmhxOHJ3c2FvbmQ5dm04c3F4ZjYzOXdvYmEwNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/17jypIkG7IAid2adTQ/giphy.gif" alt="Logo">
+            </div>
+            <span>Tự tin khoe cá tính</span>
+        </div>
+        <h1 style="text-transform:uppercase;">GIỚI THIỆU BẢN THÂN</h1>
+        <p>Môn thi tốt nghiệp</p>
+        <div class="navigation">
+            <a href="#home" onclick="showSection('home')">Trang chủ</a>
+            <a href="#about" onclick="showSection('about')">Giới thiệu</a>
+            <a href="#contact" onclick="showSection('contact')">Liên hệ</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- Column 1 -->
+        <div class="column">
+            <div class="image-placeholder">
+                <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWFyajFpMDdnbjQ1a3FhYTNvM2plcWoxa3Z4em9rd2QyczFsemdmNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2EPz0rpGsYQEw/giphy.gif" alt="Hình ảnh Toán">
+            </div>
+            <div class="title">Các môn thi bắt buộc</div>
+            <div class="article">
+                <strong>Toán:</strong> Toán học là môn khoa học nghiên cứu về các cấu trúc, trật tự và quan hệ đã hình thành từ các thực hành đếm, đo và mô tả hình dạng của các vật thể. Môn học này được sử dụng rộng rãi trong khoa học tự nhiên, kỹ thuật, y học, tài chính và các ngành khác. Toán học là chìa khóa để giải quyết vấn đề và phát triển tư duy logic.
+            </div>
+            <div class="article">
+                <strong>Văn:</strong> Văn học là nghệ thuật sử dụng ngôn ngữ để diễn đạt và truyền tải các ý tưởng, cảm xúc và trải nghiệm của con người. Nó phản ánh cuộc sống, văn hóa và lịch sử của một xã hội. Văn học giúp chúng ta hiểu rõ hơn về bản thân, thế giới xung quanh và những giá trị nhân văn cao đẹp.
+            </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="column">
+            <div class="image-placeholder">
+                <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXdjNmRnem9rMXJpODdrbHllZzZwc20yeTJmdmhoMzBldHZjY2l1eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/54BB7UhX573Qhh8k1l/giphy.gif" alt="Hình ảnh Anh">
+            </div>
+            <div class="title">Các môn thi tự chọn</div>
+            <div class="article">
+                <strong>Anh:</strong> Tiếng Anh là một ngôn ngữ toàn cầu, được sử dụng rộng rãi trong giao tiếp quốc tế, kinh doanh, khoa học và công nghệ. Nó mở ra cơ hội tiếp cận tri thức, văn hóa và những nền văn minh khác nhau trên thế giới. Học tiếng Anh giúp chúng ta tự tin giao tiếp và hội nhập quốc tế.
+            </div>
+            <div class="article">
+                <strong>Tin:</strong> Tin học là ngành khoa học nghiên cứu về các phương pháp thu thập, xử lý, lưu trữ, truyền tải và bảo vệ thông tin bằng máy tính. Nó đóng vai trò quan trọng trong mọi lĩnh vực của đời sống, từ kinh tế, xã hội đến khoa học, kỹ thuật. Tin học giúp chúng ta tự động hóa công việc, tăng năng suất và sáng tạo ra những giải pháp mới.
+            </div>
+        </div>
+
+        <!-- === ADDED SECTION FOR MAP AND EXERCISE LINKS === -->
+        <div class="additional-links-container">
+             <div class="additional-link-item">
+                 <a href="https://i.pinimg.com/736x/bf/a0/cf/bfa0cffd7d5f8c6db08cbd305ebe4409.jpg" target="_blank">Xem Bản đồ Lâm Hà</a> <!-- Replace placeholder -->
+             </div>
+             <div class="additional-link-item">
+                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKxYoU_RhZBXJ8Xj-wtR5UROaI2b9DO8-tFdAbGzreiXB5DA/viewform?usp=header" target="_blank">Bài tập ôn thi kì 2</a> <!-- Replace placeholder -->
+             </div>
+        </div>
+        <!-- === END ADDED SECTION === -->
+
+    </div> <!-- End of .content -->
+
+    <!-- Friend Pages Section -->
+    <div class="external-links">
+      <div class="link-card">
+        <h3>Trang của Hiếu</h3>
+        <a href="https://cuahieu.vercel.app/" target="_blank"> cuahieu.vercel.app</a>
+      </div>
+      <div class="link-card">
+        <h3>Trang của Sơn</h3>
+        <a href="https://truongson.vercel.app/" target="_blank">truongson.vercel.app</a>
+      </div>
+      <div class="link-card">
+        <h3>Trang của TỎA</h3>
+        <a href="https://ktoa.vercel.app/" target="_blank">ktoa.vercel.app</a>
+      </div>
+      <div class="link-card">
+        <h3>Trang của Thiện</h3>
+        <a href="https://thien-sigma.vercel.app/" target="_blank">thien-sigma.vercel.app</a>
+      </div>
+    </div>
+
+
+    <div id="about" class="about-section">
+        <h2>Giới thiệu</h2>
+        <p>Tôi tên là Nguyễn Hoài Ân lớp 12a9. Đây là thông tin sắp tới của tôi, tôi sẽ thi tốt nghiệp. Nếu bạn cần thông tin gì về tôi, hãy liên hệ ở đường link bên dưới.</p>
+         <p>Trang web này được tạo ra như một phần của bài tập thực hành môn Tin học, nhằm mục đích giới thiệu bản thân và các môn thi tốt nghiệp theo cách trực quan và hiện đại.</p>
+    </div>
+
+    <div id="contact" class="contact-section">
+        <h2>Liên hệ</h2>
+        <div class="contact-links">
+            <a href="URL_FACEBOOK_CỦA_BẠN">Facebook</a> <!-- Replace # -->
+            <a href="URL_ZALO_CỦA_BẠN">Zalo</a>     <!-- Replace # -->
+            <a href="URL_INSTAGRAM_CỦA_BẠN">Instagram</a><!-- Replace # -->
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2024 Nguyễn Hoài Ân. Thiết kế cho bài tập Tin học. Ghi rõ nguồn nếu sao chép.
+    </div>
+</div>
+
+</body>
+</html>
